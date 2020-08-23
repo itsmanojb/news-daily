@@ -1,15 +1,38 @@
-import React from 'react';
-import './ExploreContainer.css';
+import React, { useEffect } from 'react';
+import {
+  IonCard,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCardContent,
+} from '@ionic/react';
+import NewsDataService from '../utility/dataService';
 
 interface ContainerProps {
   name: string;
 }
 
 const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
+  useEffect(() => {
+    NewsDataService.getHeadlines('').then((res) => {
+      console.log(res);
+    });
+  }, []);
+
   return (
     <div className="container">
-      <strong>{name}</strong>
-      <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <IonCard>
+        <IonCardHeader>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          <IonCardTitle>Card Title</IonCardTitle>
+        </IonCardHeader>
+
+        <IonCardContent>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit
+          clean.
+        </IonCardContent>
+      </IonCard>
     </div>
   );
 };
