@@ -30,8 +30,12 @@ const NewsCard: React.FC<NewsCardProp> = (data) => {
     relativeDate: new Date(),
   });
 
+  const openNewsArticle = (url: string) => {
+    window.open(url, '_blank');
+  };
+
   return (
-    <IonCard className="ion-activatable">
+    <IonCard className="ion-activatable" onClick={() => openNewsArticle(url)}>
       <img src={urlToImage} alt=".." />
       <IonCardHeader>
         <IonCardSubtitle>{source.name}</IonCardSubtitle>
