@@ -1,5 +1,5 @@
 {
-  "name": "paper-news",
+  "name": "news-daily",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "description": "An Ionic project"
+  "description": "A News Application built with React/Ionic"
 }
