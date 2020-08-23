@@ -1,0 +1,13 @@
+.date-header {
+  padding: 0 !important;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --min-height: 36px;
+  --color: var(--ion-color-medium-shade);
+}
+
+.date-title {
+  padding: 0 0 0 16px;
+  text-align: left;
+  font-weight: 600;
+}

@@ -1,8 +1,8 @@
 import request from './request';
 
-function getHeadlines(urlParams: any) {
+function getHeadlines(urlParams?: string) {
   return request({
-    url: `top-headlines?country=in${urlParams}`,
+    url: `top-headlines?${urlParams}`,
     method: 'GET',
   });
 }

@@ -27,6 +27,7 @@ import '@ionic/react/css/typography.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './theme/core.css';
 
 setupConfig({
   // rippleEffect: false,
