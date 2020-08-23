@@ -1,19 +1,21 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
+  IonRouterOutlet,
   IonApp,
   IonIcon,
   IonLabel,
-  IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
+  setupConfig,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { newspaperOutline, searchOutline, globeOutline } from 'ionicons/icons';
+
+import Headlines from './pages/Headlines';
+import Sources from './pages/Sources';
+import Search from './pages/Search';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -34,28 +36,37 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+setupConfig({
+  // rippleEffect: false,
+  mode: 'ios',
+});
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab3" component={Tab3} />
-          <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
+          <Route path="/headlines" component={Headlines} exact={true} />
+          <Route path="/sources" component={Sources} exact={true} />
+          <Route path="/search" component={Search} />
+          <Route
+            path="/"
+            render={() => <Redirect to="/headlines" />}
+            exact={true}
+          />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="headlines" href="/headlines">
+            <IonIcon icon={newspaperOutline} />
+            <IonLabel>Headlines</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="sources" href="/sources">
+            <IonIcon icon={globeOutline} />
+            <IonLabel>Sources</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="search" href="/search">
+            <IonIcon icon={searchOutline} />
+            <IonLabel>Search</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
