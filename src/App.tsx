@@ -11,11 +11,11 @@ import {
   setupConfig,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { newspaperOutline, searchOutline, globeOutline } from 'ionicons/icons';
+import { newspaperOutline, optionsOutline, earthOutline } from 'ionicons/icons';
 
 import Headlines from './pages/Headlines';
 import Sources from './pages/Sources';
-import Search from './pages/Search';
+import Settings from './pages/Settings';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -41,7 +41,7 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route path="/headlines" component={Headlines} exact={true} />
           <Route path="/sources" component={Sources} exact={true} />
-          <Route path="/search" component={Search} />
+          <Route path="/settings" component={Settings} exact={true} />
           <Route
             path="/"
             render={() => <Redirect to="/headlines" />}
@@ -54,12 +54,12 @@ const App: React.FC = () => (
             <IonLabel>Headlines</IonLabel>
           </IonTabButton>
           <IonTabButton tab="sources" href="/sources">
-            <IonIcon icon={globeOutline} />
+            <IonIcon icon={earthOutline} />
             <IonLabel>Sources</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="search" href="/search">
-            <IonIcon icon={searchOutline} />
-            <IonLabel>Search</IonLabel>
+          <IonTabButton tab="settings" href="/settings">
+            <IonIcon icon={optionsOutline} />
+            <IonLabel>Settings</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

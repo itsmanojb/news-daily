@@ -7,10 +7,12 @@ import {
   IonToolbar,
   IonLoading,
 } from '@ionic/react';
-import NewsDataService from '../utility/dataService';
-import './Headlines.css';
-import { NewsItem } from '../news.interface';
 import NewsContainer from '../components/NewsContainer';
+import CategoryList from '../components/CategoryList';
+
+import NewsDataService from '../utility/dataService';
+import { NewsItem } from '../news.interface';
+import './Headlines.css';
 
 const Headlines: React.FC = () => {
   const [topStories, setTopStories] = useState<NewsItem[]>([]);
@@ -53,6 +55,7 @@ const Headlines: React.FC = () => {
             <IonTitle size="large">Top Stories</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <CategoryList />
         <NewsContainer allNews={topStories} />
         <IonLoading isOpen={showLoading} message={'Please wait...'} />
       </IonContent>
