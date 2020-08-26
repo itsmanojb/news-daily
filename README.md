@@ -3,7 +3,7 @@
 
 Get breaking news headlines, and search for articles from news sources and blogs all over the web. 
 
-![Screens](/screen.png?raw=true "")
+![Screens](/screens.png?raw=true "")
 
 
 ### How to Use
