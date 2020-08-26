@@ -25,16 +25,18 @@ const Headlines: React.FC = () => {
   useEffect(() => {
     setShowLoading(true);
 
-    NewsDataService.getHeadlines('country=in').then((res: any) => {
-      if (res.status === 'ok') {
-        const newsArticles = res.articles;
-        setTopStories(newsArticles);
-      } else {
-        console.log('Error fetching top headlines');
-        setTopStories([]);
+    NewsDataService.getHeadlines('country=us&category=health').then(
+      (res: any) => {
+        if (res.status === 'ok') {
+          const newsArticles = res.articles;
+          setTopStories(newsArticles);
+        } else {
+          console.log('Error fetching top headlines');
+          setTopStories([]);
+        }
+        setShowLoading(false);
       }
-      setShowLoading(false);
-    });
+    );
   }, []);
 
   return (
@@ -52,7 +54,9 @@ const Headlines: React.FC = () => {
             </IonTitle>
           </IonToolbar>
           <IonToolbar>
-            <IonTitle size="large">Top Stories</IonTitle>
+            <IonTitle size="large" color="primary">
+              Top Stories
+            </IonTitle>
           </IonToolbar>
         </IonHeader>
         <CategoryList />

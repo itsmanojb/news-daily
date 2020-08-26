@@ -11,7 +11,12 @@ import {
   setupConfig,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { newspaperOutline, optionsOutline, earthOutline } from 'ionicons/icons';
+import {
+  newspaperOutline,
+  optionsOutline,
+  earthOutline,
+  searchOutline,
+} from 'ionicons/icons';
 
 import Headlines from './pages/Headlines';
 import Sources from './pages/Sources';
@@ -56,6 +61,10 @@ const App: React.FC = () => (
           <IonTabButton tab="sources" href="/sources">
             <IonIcon icon={earthOutline} />
             <IonLabel>Sources</IonLabel>
+          </IonTabButton>
+          <IonTabButton>
+            <IonIcon icon={searchOutline} />
+            <IonLabel>Search</IonLabel>
           </IonTabButton>
           <IonTabButton tab="settings" href="/settings">
             <IonIcon icon={optionsOutline} />

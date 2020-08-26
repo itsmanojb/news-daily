@@ -22,18 +22,53 @@
 .category-list .category {
   text-align: center;
   margin: 0 5px;
-  min-width: 80px;
+  min-width: 90px;
 }
 
 .category-list .category .icon {
   height: 70px;
-  background: #eee;
+  background: var(--ion-color-light);
   width: 70px;
   border-radius: 50%;
   margin: 0 auto 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+}
+
+.category-list .category .icon.business {
+  background-image: url('../assets/business.png');
+}
+
+.category-list .category .icon.entertainment {
+  background-image: url('../assets/entertainment.png');
+  background-size: 32px;
+}
+
+.category-list .category .icon.general {
+  background-image: url('../assets/general.png');
+  background-size: 28px;
+}
+
+.category-list .category .icon.science {
+  background-image: url('../assets/science.png');
+}
+
+.category-list .category .icon.sports {
+  background-image: url('../assets/sports.png');
+}
+
+.category-list .category .icon.technology {
+  background-image: url('../assets/technology.png');
+}
+
+.category-list .category .icon.health {
+  background-image: url('../assets/health.png');
+  background-size: 32px;
 }
 
 .category-list .category span {
-  font-size: 10.5px;
+  font-size: 12px;
   text-transform: capitalize;
+  color: #555;
 }
